@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Track from "./Track";
 
-function TrackList() {
+function TrackList({ addPlayList }) {
   const [tracks, setTracks] = useState([
     { name: "Snowfall", artist: "Oneheart", album: "snowfall", id: 1 },
     { name: "Audio 002", artist: "Next to Blue", album: "Audio 002", id: 2 },
@@ -65,9 +65,25 @@ function TrackList() {
     },
   ]);
 
+  const [playlistName, setPlaylistName] = useState("");
+
+  const handleCreatePlaylist = () => {
+    if (playlistName && tracks.length > 0) {
+      addPlayList(playlistName, tracks);
+      setPlaylistName("");
+    }
+  };
+
   return (
     <div className="track-list">
       <h2>TrackList</h2>
+      <input
+        type="text"
+        value={playlistName}
+        onChange={(e) => setPlaylistName(e.target.value)}
+        placeholder="Enter playlist name"
+      />
+      <button onClick={handleCreatePlaylist}>Create Playlist</button>
       {tracks.map((track) => (
         <Track
           key={track.id}
