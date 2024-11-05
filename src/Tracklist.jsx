@@ -46,10 +46,22 @@ function TrackList() {
       id: 12,
     },
     {
-      name: "vampire",
+      name: "Vampire",
       artist: "Our Last Night",
       album: "Vampire",
       id: 13,
+    },
+    {
+      name: "Megalovania",
+      artist: "RichaadEB",
+      album: "Megalovania",
+      id: 14,
+    },
+    {
+      name: "Fire",
+      artist: "MEDUZA, OneRepublic, Leory",
+      album: "Fire (Offical UEFA Euro 2024 Song)",
+      id: 15,
     },
   ]);
 
